@@ -20,7 +20,7 @@ export default function Logout() {
       })
       .then(() => {
         clearStore()
-        router.push('/')
+        window.location.href = '/login'
       })
   }
   return (
