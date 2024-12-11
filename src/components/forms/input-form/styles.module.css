@@ -1,0 +1,12 @@
+.icon {
+    position: absolute;
+    right: .8rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.errorText {
+    color: rgb(220 38 38);
+    font-size: 14px;
+    margin-top: 5px;
+}

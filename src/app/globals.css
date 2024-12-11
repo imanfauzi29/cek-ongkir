@@ -1,14 +1,18 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*:root {*/
+/*  --background: #ffffff;*/
+/*  --foreground: #171717;*/
+/*  --accent: #333;*/
+/*  --accent-light: #486c89;*/
+/*}*/
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --accent: #212121;
+  --accent-light: #486c89;
 }
+/*@media (prefers-color-scheme: dark) {*/
+/*}*/
 
 html,
 body {
@@ -30,6 +34,19 @@ body {
   margin: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
+input, button {
+  border: none;
+  background: transparent;
+}
+
+input:focus {
+  outline: none;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -39,4 +56,74 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-1 {
+  flex: 1 1 0;
+}
+
+.relative {
+  position: relative;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.block {
+  display: block;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.horizontal-divider {
+  width: 100%;
+  border-top: 1px solid var(--accent);
+}
+
+.h-screen {
+  height: 100vh;
 }

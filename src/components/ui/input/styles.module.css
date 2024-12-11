@@ -1,0 +1,25 @@
+.formItem {
+    position: relative;
+    width: 100%;
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+}
+
+.formField {
+    width: 100%;
+    padding: 1rem 0.5rem;
+    border-radius: 5px;
+}
+
+.formField:focus {
+    box-shadow: 0 0 0 3px var(--accent-light);
+    border-color: var(--accent-light);
+    transition: box-shadow 0.3s;
+}
+
+.rightIcon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}

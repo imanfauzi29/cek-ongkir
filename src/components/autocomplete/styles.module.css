@@ -1,0 +1,57 @@
+.wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+}
+
+.listWrapper {
+    margin-top: 1rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0);
+    overflow: auto;
+    max-height: 0;
+    transition: max-height .2s ease-in-out;
+}
+
+.inputWrapper {
+    border-radius: 10px;
+    border: 1px solid var(--accent);
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.show {
+    max-height: 11rem;
+}
+
+.listWrapper ul {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.listWrapper ul li {
+    list-style: none;
+}
+
+.listWrapper ul li button {
+    color: white;
+    width: 100%;
+    text-align: start;
+    padding: .8rem 1rem;
+}
+
+.listWrapper ul li button:hover {
+    background-color: rgba(255,255,255,.2);
+}
