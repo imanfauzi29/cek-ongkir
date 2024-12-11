@@ -16,6 +16,7 @@ export default function DetailCost() {
           width={150}
           height={150}
           style={{ marginInline: 'auto', display: 'block' }}
+          unoptimized
         />
       )}
       {!isLoading && cost_details === undefined && (

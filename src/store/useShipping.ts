@@ -11,6 +11,7 @@ export type ShippingState = {
 export type ShippingAction = {
   setCostDetails: (data: CostResponseType[]) => void
   setIsLoading: (loading: boolean) => void
+  clearShippingStore: () => void
 }
 
 export type ShippingStore = ShippingState & ShippingAction
@@ -38,4 +39,6 @@ export const useShippingStore = create<ShippingStore>()((set) => ({
   setCostDetails: (data: CostResponseType[]) =>
     set(() => ({ cost_details: data })),
   setIsLoading: (loading: boolean) => set(() => ({ isLoading: loading })),
+  clearShippingStore: () =>
+    set(() => ({ isLoading: false, cost_details: undefined })),
 }))
