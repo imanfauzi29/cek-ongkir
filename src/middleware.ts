@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import jwt from 'jsonwebtoken'
+import { jwtDecode } from 'jwt-decode'
 
 export function middleware(request: NextRequest) {
   const token = request.cookies.get('token')
@@ -14,8 +14,12 @@ export function middleware(request: NextRequest) {
   }
 
   if (pathname !== '/login' && token?.value) {
-    const verify = jwt.verify(token.value, process.env.SECRET_KEY as string)
-    if (!verify) {
+    const decoded = jwtDecode(token.value)
+
+    const currentTime = Math.floor(Date.now() / 1000)
+    const expirationTime = decoded.exp as number
+
+    if (expirationTime < currentTime) {
       request.cookies.delete('token')
       return NextResponse.redirect(new URL('/login', request.url))
     }
